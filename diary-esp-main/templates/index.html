@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>environmental
+    community</title>
+</head>
+<body>
+  <header class="header">
+    <img src="../static/img/logo.svg" alt="logo" width="30" height="30">
+    <ul class="main-list">
+        <li class="list__item">
+          <a href="">
+            <img src="../static/img/login.svg" alt="login" width="20" height="20">
+          </a>
+    </ul>
+  </header>
+  <main>
+    {% block content %}
+    <h1 class="main__title" style="text-shadow: 0 0 10px rgba(90, 184, 140, 0.8);">Environmental Community</h1>
+    <h2 class="main__title" style="text-shadow: 0 0 10px rgba(90, 184, 140, 0.8);">Foros</h2>
+    <ul class="cards-list">
+      {% for el in cards%}
+      <li class="card">
+        <a class="card__link" href="/card/{{el.id}}">
+          <img class="card__img" src="static/img/naturaleza.png" width="250" height="250" alt="naturaleza">
+          <div class="card__text">
+            <h2 class="card__title">{{el.title}}</h2>
+            <p class="card__subtitle">{{el.subtitle}}</p>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+      <li class="card card--creat">
+          <a class="creat__link" href="{{url_for('create')}}"></a>
+      </li>
+    </ul>
+    {% endblock %}
+  </main>
+  <footer>
+    <div class="footer-info">
+      <h2>¿Por qué es importante hablar de los problemas ambientales?</h2>
+      <p>Los problemas ambientales son una de las principales amenazas para la salud y el bienestar de la humanidad. El cambio climático, la contaminación del aire y del agua, la pérdida de biodiversidad y la degradación del suelo son solo algunos de los desafíos que enfrentamos.</p>
+      <p>Hablar de estos problemas es fundamental para concienciar a la sociedad sobre la importancia de proteger el medio ambiente y promover un desarrollo sostenible. Al discutir y compartir información sobre estos temas, podemos trabajar juntos para encontrar soluciones y crear un futuro más sostenible para todos.</p>
+    </div>
+  </footer>
+</body>
+</html>
